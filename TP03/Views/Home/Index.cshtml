@@ -4,5 +4,13 @@
 
 <div>
     <h1>Index</h1>
-    <p>Bienvenidos al sitio web de NombreProyecto</p>
+    <p>Bienvenidos al sitio web de MusicStore</p>
 </div>
+@{
+    foreach(Disco disco in @ViewBag.miLista)
+    {
+        <p>@disco.Nombre</p>
+        <img src = @disco.Foto alt = @disco.Nombre>
+        <a href='@Url.Action("InfoDisco","Home", new {ID=disco.ID})'>Ver más info del disco</a>
+    }
+}
